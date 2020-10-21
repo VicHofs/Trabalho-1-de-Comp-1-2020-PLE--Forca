@@ -21,16 +21,6 @@ int main( void ) {
     perror("Erro");
     exit(1);
   }
-  int i = 0;
-  while (fgets(input, sizeof(input), istream) != NULL) {
-    fputs(input, stdout);
-  }
-
-  fclose(istream);
-
-  for (int i = 0; i < MAXW; i++) {
-    printf("%s\n", words[i]);
-  }
 
   return 0;
 }
