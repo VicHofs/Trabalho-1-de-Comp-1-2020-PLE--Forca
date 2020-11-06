@@ -10,7 +10,7 @@ int revealed[26] = {0}, guessed[26] = {0}, present[26] = {0}, strikes = 0, done 
 int main( int argc, char* argv[] ) {
   //escolha de categoria
   printf("Selecione a categoria que deseja jogar: \n");
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 4; i++) {
     printf("%d-%s\n", i + 1, categories[i]);
   }
   do
@@ -68,7 +68,7 @@ int main( int argc, char* argv[] ) {
   do 
     guess = getchar();
   while (guess != 'S' && guess != 's' && guess != 'N' && guess != 'n');
-  (guess == 'S' || guess == 's' ? system("forca") : exit(0));
+  (guess == 'S' || guess == 's' ? system("forca") : system("cd .."));
 
   return 0;
 }
