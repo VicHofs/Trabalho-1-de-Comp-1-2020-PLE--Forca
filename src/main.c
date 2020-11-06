@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include <string.h>
 #include "utils.h"
 #include "Defs.h"
@@ -15,7 +14,7 @@ int main( int argc, char* argv[] ) {
     printf("%d-%s\n", i + 1, categories[i]);
   }
   do
-    interaction = getch() - 49;
+    interaction = getchar() - 49;
   while (interaction > 2 || interaction < 0);
   strcat(filename, categories[interaction]); strcat(filename, ".in");
 
@@ -67,7 +66,7 @@ int main( int argc, char* argv[] ) {
   //entrada do novo jogo
   printf("Gostaria de jogar novamente? S/N\n");
   do 
-    guess = getch();
+    guess = getchar();
   while (guess != 'S' && guess != 's' && guess != 'N' && guess != 'n');
   (guess == 'S' || guess == 's' ? system("forca") : exit(0));
 

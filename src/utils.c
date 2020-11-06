@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <conio.h>
 #include <string.h>
 #include "utils.h"
 
@@ -72,7 +71,7 @@ checa se o caracter var é válido e se encontra na palavra,
 */
 void test_char(char *var, int *present, int *revealed, int *guessed, int *strikes) {
   do 
-    *var = getch();
+    *var = getchar();
   while (*var < 65 || (*var > 90 && *var < 97) || *var > 122);
 
   if (*var >= 97) *var -= 32;
