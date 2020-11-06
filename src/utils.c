@@ -1,17 +1,18 @@
+//*definições das funções de utilidade do jogo
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <conio.h>
 #include <string.h>
 #include "utils.h"
-//vamos colocar todas as utilidades do jogo nesse arquivo
-//lembrar de incluir a prototipagem no header para cada uma
 
+//retorna um número inteiro entre os limites lower (inclusivo) e upper
 int randint(int lower, int upper) {
   srand(time(0) + clock());
   return (rand() % (upper - lower + 1)) + lower;
 }
 
+//revela algumas das letras da palavra sorteada para inicializar o gameplay
 void tip(char *word, int *guessed, int *revealed) {
   int iter = strlen(word) / 3;
   char c;
@@ -24,6 +25,7 @@ void tip(char *word, int *guessed, int *revealed) {
   }
 }
 
+//imprime no stdout o progresso do jogo baseado no número de erros (strikes)
 void hangman(int strikes) {
   char head = strikes == 6 ? '0' : 'O', torso = '|', l_arm = '/', r_arm = '\\', l_leg = '/', r_leg = '\\';
 
@@ -44,6 +46,7 @@ void hangman(int strikes) {
     );
 }
 
+//imprime no stdout o progresso de acertos na palavra
 void word_progress(char *word, int *revealed, int *done) {
   *done = 1;
   for (int i = 0; i < strlen(word); i++) {
@@ -61,6 +64,12 @@ void word_progress(char *word, int *revealed, int *done) {
   printf("\n");
 }
 
+/*
+checa se o caracter var é válido e se encontra na palavra,
+  - caso seja inválido, requisita outro input
+  - incrementa o número de erros se não for encontrado
+  - marca como testado e o revela na palavra caso contrário
+*/
 void test_char(char *var, int *present, int *revealed, int *guessed, int *strikes) {
   do 
     *var = getch();
