@@ -14,7 +14,7 @@ int main( int argc, char* argv[] ) {
   for (int i = 0; i < 3; i++) {
     printf("%d-%s\n", i + 1, categories[i]);
   }
-  do 
+  do
     interaction = getch() - 49;
   while (interaction > 2 || interaction < 0);
   strcat(filename, categories[interaction]); strcat(filename, ".in");
