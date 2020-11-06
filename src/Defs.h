@@ -7,6 +7,6 @@
     #define CLEAR "clear"
   #endif
 
-#define MAXW 168
+#define MAXW 205
 
 #endif
