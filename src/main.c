@@ -4,7 +4,7 @@
 #include "utils.h"
 #include "Defs.h"
 
-char *categories[3] = {"animais", "artistas", "objetos"}, *words[MAXW], filename[20] = "./data/", word[30], guess;
+char *categories[4] = {"animais", "frutas", "objetos", "artistas"}, *words[MAXW], filename[20] = "./data/", word[30], guess;
 int revealed[26] = {0}, guessed[26] = {0}, present[26] = {0}, strikes = 0, done = 0, pick, interaction;
 
 int main( int argc, char* argv[] ) {
@@ -15,7 +15,7 @@ int main( int argc, char* argv[] ) {
   }
   do
     interaction = getchar() - 49;
-  while (interaction > 2 || interaction < 0);
+  while (interaction > 3 || interaction < 0);
   strcat(filename, categories[interaction]); strcat(filename, ".in");
 
   //leitura do arquivo pertinente à categoria escolhida
@@ -60,7 +60,7 @@ int main( int argc, char* argv[] ) {
     test_char(&guess, present, revealed, guessed, &strikes);
   }
 
-  printf("%s\n", (done ? "Bom trabalho!\a" : "F"));
+  printf("%s\n", (done ? "Bom trabalho!\a" : "Fim de jogo"));
   if (!done) printf("A resposta era: %s\n", word);
 
   //entrada do novo jogo
