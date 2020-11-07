@@ -1,6 +1,6 @@
 # Trabalho-1-de-Comp-1-2020-PLE--Forca
 
-[Vídeo de introdução](https://youtu.be/XN1NnVgN6_M)
+[![](https://yt-embed.herokuapp.com/embed?v=XN1NnVgN6_M&ab_channel=VictorHofstetter)](https://youtu.be/XN1NnVgN6_M "")
 
 ## Objetivos 🎯
 Na descrição da atividade pelos docentes ficaram claros 2 objetivos:
@@ -23,10 +23,11 @@ Com base em tais princípios, pode-se planejar um jogo com experiência de uso m
 ## Rundown 📋
 Veja um pseudocódigo desenvolvido com linguagem natural, que apresenta breve descrições das etapas que compõe uma jogada ou execução do jogo:
 -	Questionar usuário e ler sua entrada sobre qual tema deseja que sua palavra seja.
--	Escolhe-se uma palavra aleatória dentro a lista de possibilidades de determinado tema. 
--	Pede-se que o usuário entre com uma única letra e há leitura de tal caractere previamente validado. 
+![image3](https://github.com/VicHofs/Trabalho-1-de-Comp-1-2020-PLE--Forca/blob/main/assets/intro%20filled.png)
+-	Escolhe-se uma palavra aleatória dentro a lista de possibilidades de determinado tema.
+-	Pede-se que o usuário entre com uma única letra e há leitura de tal caractere previamente validado.
   -	Verifica-se o pertencimento de tal letra à palavra-chave:
-    -	Se a letra estiver na palavra: a letra é destacada na saída do programa nas posições em que poderia ser encontrada na palavra-chave. 
+    -	Se a letra estiver na palavra: a letra é destacada na saída do programa nas posições em que poderia ser encontrada na palavra-chave.
     -	Se a letra for inválida: o jogador perde uma de suas chances e seu boneco ganha um membro, tal processo deve estar claro na saída do programa.
   -	Verifica-se a existência de letras a ainda serem descobertas ou chances disponíveis.
     -	Se não houver letras a serem descobertas ou se o usuário não tem mais chances disponíveis:
@@ -39,26 +40,29 @@ Veja um pseudocódigo desenvolvido com linguagem natural, que apresenta breve de
 
 ## Regras de utilização do jogo e saídas 📝
 É importante ressaltar as regras de utilização do jogo pelo usuário. Para isso, deve-se seguir a sequência de etapas em que é necessária alguma intervenção, entrada do usuário. 
-- Escolha de tema: O usuário deve entrar com um número inteiro no intervalo [1,4]. 
+- Escolha de tema: O usuário deve entrar com um número inteiro no intervalo [1,4].
+![image1](https://github.com/VicHofs/Trabalho-1-de-Comp-1-2020-PLE--Forca/blob/main/assets/intro.png)
 
 - Entrada da letra adivinhada: O usuário deve entrar com uma letra do alfabeto (maiúscula ou minúscula).
+![image2](https://github.com/VicHofs/Trabalho-1-de-Comp-1-2020-PLE--Forca/blob/main/assets/game%20screen%20filled.png)
    
 - Entrada da opção de retorno ou prosseguimento: O usuário deve entrar ou com y ou n (minúsculos ou maiúsculos).
+![image3](https://github.com/VicHofs/Trabalho-1-de-Comp-1-2020-PLE--Forca/blob/main/assets/endcard.png)
  
 ## Técnicas utilizadas no trabalho 🧠
-⦁	Arrays
-⦁	Modificadores de variáveis 
-⦁	Limpeza de buffer
-⦁	Passagem parâmetros à funções por referência e valor
-⦁	Argc e Argv
-⦁	Comandos de iteração, controle de fluxo
-⦁	Funções de entrada e saída da biblioteca <stdio.h>
-⦁	Multiarquivos com criação de bibliotecas próprias
-⦁	Debugger
-⦁	Impressão de mensagens de erro
-⦁	Manipulação de strings
-⦁	Alocação dinâmica de memória
-⦁	Acesso aleatório a elementos (vantagens)
-⦁	Geração de números aleatórios dentro de um escopo com biblioteca time.h, srand e rand.
-⦁	Input handling
-⦁	Criação de modos diferentes de jogo
+-	Arrays
+-	Modificadores de variáveis 
+-	Limpeza de buffer
+-	Passagem parâmetros à funções por referência e valor
+-	Argc e Argv
+-	Comandos de iteração, controle de fluxo
+-	Funções de entrada e saída da biblioteca <stdio.h>
+-	Multiarquivos com criação de bibliotecas próprias
+-	Debugger
+-	Impressão de mensagens de erro
+-	Manipulação de strings
+-	Alocação dinâmica de memória
+-	Acesso aleatório a elementos (vantagens)
+-	Geração de números aleatórios dentro de um escopo com biblioteca time.h, srand e rand.
+-	Input handling
+- Interação com o sistema
