@@ -68,7 +68,7 @@ int main( int argc, char* argv[] ) {
   do 
     guess = getchar();
   while (guess != 'S' && guess != 's' && guess != 'N' && guess != 'n');
-  (guess == 'S' || guess == 's' ? system("forca") : system("cd .."));
+  (guess == 'S' || guess == 's' ? system("forca") : exit(0));
 
   return 0;
 }
