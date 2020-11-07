@@ -7,7 +7,7 @@
 
 Sob orientacao dos professores: Andre Brito e Valeria Bastos
 
-Descriçao: Versao simplificada do jogo popular de tabuleiro forca */
+DescriÃ§ao: Versao simplificada do jogo popular de tabuleiro forca */
 
 #include <stdio.h>
 #include <string.h>
@@ -19,7 +19,7 @@ Descriçao: Versao simplificada do jogo popular de tabuleiro forca */
 /* definir o limite de "vidas" ou chances */
 #define CHANCES_MAX 6
 
-int main(void) 
+int main(int argc, char *argv[ ]) 
 {
     char *categories[3] = {"animais", "artistas", "objetos"}, nomeArquivoEntrada[20];
     short int categoria;
@@ -44,6 +44,7 @@ int main(void)
             printf("%d-%s\n", i + 1, categories[i]);
         }
 
+        printf("\nSua resposta: ");
         scanf("%hi", &categoria);
         while ((getchar()) != '\n');
 
@@ -54,7 +55,7 @@ int main(void)
             continue;
         }
         
-        /* leitura do arquivo pertinente à categoria escolhida */
+        /* leitura do arquivo pertinente Ã  categoria escolhida */
         sprintf(nomeArquivoEntrada,"%s.in", categories[categoria-1]);
 
         if (!(arquivoPalavrasEntrada = fopen(nomeArquivoEntrada, "r"))) 
@@ -76,11 +77,17 @@ int main(void)
             /* escolher a palavra chave da vez */
             palavraChave = escolheUmaPalavraAleatoria(vocabulario,numeroDePalavrasNoArquivo);
 
-            printf("palavra chave = %s\n", palavraChave);
+            if(argc == 2)
+            {
+                if(strcmp(argv[1],"teste")== 0)
+                {
+                    printf("\npalavra chave = %s\n", palavraChave);
+                }
+            }
 
 
             /* preencher todas as letras da palavra com asteristicos 
-            asteristicos estes, que somem conforme usuário acerta */
+            asteristicos estes, que somem conforme usuÃ¡rio acerta */
             for (i = 0; i < 32; i++)
             {
                 palavraDisplay[i] = '*';
@@ -92,7 +99,7 @@ int main(void)
 
             chances = CHANCES_MAX;
 
-            /* preprocessamento da palavra chave para facilitar identificacão de letras e suas posições na palavra */
+            /* preprocessamento da palavra chave para facilitar identificacÃ£o de letras e suas posiÃ§Ãµes na palavra */
             for(contador = 0;contador < 26;contador++)
             {
                 alfabeto[contador] = preProcessamentoPalavra(palavraChave, (char) 97 + contador);
@@ -162,6 +169,7 @@ int main(void)
                 if (chances == 0)
                 {
                     printf("Puxa, voce PERDEU! ;-)\n");
+                    printf("A palavra-chave era %s\n", palavraChave);
                 }
                 
             }
@@ -169,7 +177,7 @@ int main(void)
             /* perguntar ao usuario se deseja prosseguir para a proxima palavra do mesmo tema */
             while (1)
             {
-                printf("Deseja ir para a próxima palavra -do mesmo tema-?(y / n) ");
+                printf("Deseja ir para a prÃ³xima palavra -do mesmo tema-?(y / n) ");
                 scanf("%c", &querProximaPalavra);
                 while ( getchar() != '\n' );
                 querProximaPalavra = tolower(querProximaPalavra);
@@ -181,7 +189,7 @@ int main(void)
                 else break;    
             }   
 
-            /* se sim, continuar para proxima palavra do tema(proximo laço do loop) */
+            /* se sim, continuar para proxima palavra do tema(proximo laÃ§o do loop) */
             if (querProximaPalavra == 'y')
             {
                 continue;
@@ -192,10 +200,10 @@ int main(void)
 
         }
 
-        /* perguntar ao usuario se deseja encerrar o jogo (caso não,voltar ao menu inicial) */
+        /* perguntar ao usuario se deseja encerrar o jogo (caso nÃ£o,voltar ao menu inicial) */
         while(1)
         {
-            printf("Deseja ir para o menu inicial(se não, o jogo sera encerrado)?(y / n) ");
+            printf("Deseja ir para o menu inicial(se nÃ£o, o jogo sera encerrado)?(y / n) ");
             scanf("%c", &querProximaPalavra);
             while ( getchar() != '\n' );
             querProximaPalavra = tolower(querProximaPalavra);
@@ -207,7 +215,7 @@ int main(void)
             else break;    
         } 
 
-        /* se sim, continuar para menu inicial(proximo laço do loop) */
+        /* se sim, continuar para menu inicial(proximo laÃ§o do loop) */
         if (querProximaPalavra == 'y')
         {
             free(vocabulario);
