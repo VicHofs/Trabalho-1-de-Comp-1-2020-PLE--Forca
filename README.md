@@ -41,12 +41,15 @@ Veja um pseudocódigo desenvolvido com linguagem natural, que apresenta breve de
 ## Regras de utilização do jogo e saídas 📝
 É importante ressaltar as regras de utilização do jogo pelo usuário. Para isso, deve-se seguir a sequência de etapas em que é necessária alguma intervenção, entrada do usuário. 
 - Escolha de tema: O usuário deve entrar com um número inteiro no intervalo [1,4].
+  
   ![image1](https://github.com/VicHofs/Trabalho-1-de-Comp-1-2020-PLE--Forca/blob/main/assets/intro.png)
 
 - Entrada da letra adivinhada: O usuário deve entrar com uma letra do alfabeto (maiúscula ou minúscula).
+  
   ![image2](https://github.com/VicHofs/Trabalho-1-de-Comp-1-2020-PLE--Forca/blob/main/assets/game%20screen%20filled.png)
    
 - Entrada da opção de retorno ou prosseguimento: O usuário deve entrar ou com s ou n (minúsculos ou maiúsculos).
+  
   ![image3](https://github.com/VicHofs/Trabalho-1-de-Comp-1-2020-PLE--Forca/blob/main/assets/endcard.png)
  
 ## Técnicas utilizadas no trabalho 🧠
