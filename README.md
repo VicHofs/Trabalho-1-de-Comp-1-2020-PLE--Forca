@@ -70,3 +70,8 @@ Veja um pseudocódigo desenvolvido com linguagem natural, que apresenta breve de
 -	Geração de números aleatórios dentro de um escopo com biblioteca time.h, srand e rand.
 -	Input handling
 - Interação com o sistema
+
+
+## notas
+
+Há uma versão simplificada do projeto na branch `MVP`, e um modelo experimental com algoritmos binários na branch `novo`
