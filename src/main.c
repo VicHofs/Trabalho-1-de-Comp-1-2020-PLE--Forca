@@ -69,7 +69,7 @@ int main( int argc, char* argv[] ) {
   out = (char *)calloc(6, sizeof(char));
   strcat(out, "forca");
 
-  //setting up word repetition avoidance
+  //processo de passagem de palavras repetidas
   for (int i = 1; i < argc; i++) {
     out = (char *)realloc(out, sizeof(char) * (strlen(argv[i]) + 4) + strlen(out));
     strcat(out, " \"");
