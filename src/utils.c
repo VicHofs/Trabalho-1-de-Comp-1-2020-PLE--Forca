@@ -14,12 +14,12 @@ int randint(int lower, int upper) {
 
 //revela algumas das letras da palavra sorteada para inicializar o gameplay
 void tip(char *word, int *guessed, int *revealed) {
-  int iter = strlen(word) / 3;
+  int iter = strlen(word) / 3; iter = iter > 1 ? iter : 1;
   char c;
   for (int i = 0; i < iter; i++) {
     do
       c = word[randint(0, strlen(word) - 1)];
-    while (revealed[c - 65]);
+    while (revealed[c - 65] || c == ' ');
     guessed[c - 65] = 1;
     revealed[c - 65] = 1;
   }
