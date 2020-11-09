@@ -61,7 +61,7 @@ int main( int argc, char* argv[] ) {
     test_char(&guess, present, revealed, guessed, &strikes);
   }
 
-  printf("%s\n", (done ? "Bom trabalho!\a" : "F"));
+  printf("%s\n", (done ? "Bom trabalho!\a" : "Fim de Jogo!"));
   if (!done) printf("A resposta era: %s\n", word);
 
   //entrada do novo jogo
