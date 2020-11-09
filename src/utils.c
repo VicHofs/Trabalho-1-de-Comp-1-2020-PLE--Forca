@@ -12,6 +12,18 @@ int randint(int lower, int upper) {
   return (rand() % (upper - lower + 1)) + lower;
 }
 
+//checa se a palavra word já apareceu previamente
+int is_repeated(char *word, char *prev[], int iter) {
+  int out = 0;
+  for (int i = 1; i < iter; i++) {
+    if (prev[i] == word) {
+      out = 1;
+      break;
+    }
+  }
+  return out;
+}
+
 //revela algumas das letras da palavra sorteada para inicializar o gameplay
 void tip(char *word, int *guessed, int *revealed) {
   int iter = strlen(word) / 3; iter = iter > 1 ? iter : 1;

@@ -5,7 +5,7 @@
 #include "utils.h"
 #include "Defs.h"
 
-char *categories[4] = {"animais", "artistas", "frutas", "objetos"}, *words[MAXW], filename[20] = "./data/", word[30], guess;
+char *categories[4] = {"animais", "artistas", "frutas", "objetos"}, *words[MAXW], filename[20] = "./data/", word[30], guess, *out;
 int revealed[26] = {0}, guessed[26] = {0}, present[26] = {0}, strikes = 0, done = 0, pick, interaction;
 
 int main( int argc, char* argv[] ) {
@@ -36,7 +36,9 @@ int main( int argc, char* argv[] ) {
   rewind(istream);
   fclose(istream);
 
-  pick = randint(0, n);
+  do
+    pick = randint(0, n);
+  while (is_repeated(words[pick], argv, argc));
 
   //começo do jogo
   for (int i = 0; i <= strlen(words[pick]); i++) {
@@ -64,12 +66,28 @@ int main( int argc, char* argv[] ) {
   printf("%s\n", (done ? "Bom trabalho!\a" : "Fim de Jogo!"));
   if (!done) printf("A resposta era: %s\n", word);
 
+  out = (char *)calloc(6, sizeof(char));
+  strcat(out, "forca");
+
+  //setting up word repetition avoidance
+  for (int i = 1; i < argc; i++) {
+    out = (char *)realloc(out, sizeof(char) * (strlen(argv[i]) + 4) + strlen(out));
+    strcat(out, " \"");
+    strcat(out, argv[i]);
+    strcat(out, "\"");
+  }
+
+  out = (char *)realloc(out, sizeof(char) * (strlen(word) + 4) + strlen(out));
+  strcat(out, " \"");
+  strcat(out, word);
+  strcat(out, "\"");
+
   //entrada do novo jogo
   printf("Gostaria de jogar novamente? S/N\n");
   do 
     guess = getch();
   while (guess != 'S' && guess != 's' && guess != 'N' && guess != 'n');
-  (guess == 'S' || guess == 's' ? system("forca") : exit(0));
+  (guess == 'S' || guess == 's' ? system(out) : exit(0));
 
   return 0;
 }

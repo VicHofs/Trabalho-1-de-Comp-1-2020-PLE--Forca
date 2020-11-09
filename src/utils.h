@@ -3,6 +3,9 @@
 //retorna um número inteiro entre os limites lower (inclusivo) e upper
 int randint(int lower, int upper);
 
+//checa se a palavra word já apareceu previamente
+int is_repeated(char *word, char *prev[], int iter);
+
 //revela algumas das letras da palavra sorteada para inicializar o gameplay
 void tip(char *word, int *guessed, int *revealed);
 
