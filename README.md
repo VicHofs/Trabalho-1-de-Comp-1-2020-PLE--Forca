@@ -5,7 +5,8 @@
 ## Objetivos 🎯
 Na descrição da atividade pelos docentes ficaram claros 2 objetivos:
 -	o prático (i.e. o dever em si): recriar digitalmente um jogo de tabuleiro popular, o Jogo da Forca.
--	o acadêmico: exercitar os conhecimentos de programação e da linguagem C, similarmente com promover o desenvolvimento soft skills de trabalho em equipe e desenvolvimento de soluções computacionais, como planejamento 
+-	o acadêmico: exercitar os conhecimentos de programação e da linguagem C, similarmente com promover o desenvolvimento soft skills de trabalho em equipe e desenvolvimento de soluções computacionais.
+- o profissional: interação no ambiente do Git e discussões representativas de um ambiente profissional, incluindo o emprego de boas práticas, a metodologia KISS (Keep it simple, stupid / Keep it stupid simple) e a aderência ao GitFlow.
 
 ## Premissas do desenvolvimento do jogo 📚
 Dando prosseguimento à tarefa de construção do simulador, tornou-se necessário o estabelecimento de um plano de trabalho detalhado.
